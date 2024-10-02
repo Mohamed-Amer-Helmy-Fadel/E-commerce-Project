@@ -1,0 +1,20 @@
+in admin add product there is problem of not deleting the down three inputs
+2-in SideFilter.js we can slice only about 5 category or 5 brnads only from sideBar
+3-in navebar page login we did loged in with storing data in variable called user in local storage in shape of object ,
+        but we did not use by token or data that we can extract from token
+4- addmin all products page pagination is different to starting of page
+5- i can add product without admin login in products page
+6- after clicking on deleting product it is not deleting from page as am not admin but it do not show any error or notification
+7- in reset password page we can reset password as it do not send code to email cause of backend
+8- ProductDetalisPage rating average is not defined as it did not return from backend
+9- in delete rade hook and rateitem.js if there is no login it will give error 
+10- when i delete or edit comment on products product Details it relaod or page not render this commponent only 
+11- in ProductDetalisPage i want to make it when i reload my page it make first color selected in add to card hook
+12- when i add product to cart it reload the page to make it render the cart page but i want to make it render the cart page without reloading
+13- if am loged in and tryed to go to unautherized route or page it will redirect me to home page not login
+14- when am admin i should not add product to cart and when i add it should not tell me that i added or say please login
+15- in admin add category or brand i should add as task for me categories or show them under page and also brands  the same as copouns
+16- add modal in custom hook then wen i call it i will pass it props that it need
+17- delete account in profile page did not done in course take it as task for me and its route or api is called delete account in user folder in postman
+18- as task for me make make the of cart less than or = the amount that is available in product/porductId
+------icon finder

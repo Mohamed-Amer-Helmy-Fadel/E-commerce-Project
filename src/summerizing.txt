@@ -1,0 +1,49 @@
+react-custom-datepicker
+input events like on change and on click and onFocus and onBlur
+search how to protect the routes in react or protected routes in react
+
+when i do hook like this and page has id on the top
+===  hoook      const ViewAllReviewHook = (id) => {}
+===  page       and this is how to use it in the page
+                    const { id } = useParams();
+                    const [item, images, cat, brand, prod] = ViewProductsDetalisHook(id);
+----------------------------------------------------------------------------------------------------
+when i have page like the next and and it had many other components i make hook like this for bringign all data the call it in the page    
+
+
+the next is for page          <ProductDetalis />
+                                  <RateContainer rateAvg={rateAvg} rateQty={rateQty} />
+                                  <CardProductsContainer products={items} title="منتجات قد تعجبك" />
+                              </Container>
+
+===  hoook      const ViewProductsDetalisHook = (id) => {}
+                      const { id } = useParams();
+                        const [item, images, cat, brand, prod] = ViewProductsDetalisHook(id);
+
+
+then i will pass data  to the entire components like this
+                      <ProductDetalis item={item} images={images} cat={cat} brand={brand} prod={prod} />
+                        <RateContainer rateAvg={rateAvg} rateQty={rateQty} />
+
+
+then i will recive these data in the component like this as 
+===  component      const ProductDetalis = ({ item, images, cat, brand, prod }) => {}
+
+----------------- some built in or used methods-------------------------------------------------------
+ for time stamp
+     const formatDate = (dateString) => {
+        const options = { year: "numeric", month: "numeric", day: "numeric" }
+        return new Date(dateString).toLocaleDateString(undefined, options)
+    }
+
+
+for adding backend url to the image
+        const getImageUrl = (imageCover) => {
+        // Check if imageCover is already a full URL
+        if (imageCover.startsWith("http")) {
+            // console.log('imageCover', imageCover)
+          return imageCover;
+        }
+        // If not, prepend the base URL
+        return `${API_BASE_URL}/products/${imageCover}`;
+      };
