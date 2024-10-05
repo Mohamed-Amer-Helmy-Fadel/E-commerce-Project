@@ -49,11 +49,13 @@ const AdminAddCategory = () => {
 
       {isPressed ? (
         loading ? (
+          <div className="text-center mt-3">
           <Spinner
             className="text-center"
             animation="border"
             variant="primary"
           />
+        </div>
         ) : null
       ) : null}
       <ToastContainer />

@@ -6,7 +6,7 @@ const AdminAllProducts = ({products}) => {
     console.log(products)
     return (
         <div>
-            <div className='admin-content-text'>ادارة جميع المنتجات</div>
+            {/* <div className='admin-content-text'>ادارة جميع المنتجات</div> */}
             <Row className='justify-content-start'>
                 {
                     products ? (

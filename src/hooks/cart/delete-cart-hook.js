@@ -10,7 +10,7 @@ const DeleteCartHook = (item) => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true)
     const [itemCount, setItemCount] = useState(0)
-
+console.log("item",item)
     const handelDeleteCart = async () => {
         setLoading(true)
         await dispatch(clearAllCartItem())

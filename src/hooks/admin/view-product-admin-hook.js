@@ -22,7 +22,7 @@ const ViewProductAdminHook = () => {
     
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getAllProducts(2))
+        dispatch(getAllProductsPage())
     }, [])
 
     const allProducts = useSelector((state) => state.allproducts.allProducts)
@@ -31,7 +31,7 @@ const ViewProductAdminHook = () => {
 
     
     const onPress = async (page) => {
-        await dispatch(getAllProductsPage(page, 2))
+        await dispatch(getAllProductsPage())
         // console.log("page", page)
     }
 
@@ -51,31 +51,6 @@ const ViewProductAdminHook = () => {
         pagination = []
 
     }catch (e) { }
-
-
-
-//  console.log("itemsafter",items)
-
-    // const onPress = async (page) => {
-    //     await dispatch(getAllProductsPage(page, 8))
-    // }
-    // let items = []; 
-    // let pagination = [];
-    // const allProducts = useSelector((state) => state.allproducts.allProducts)
-    // try {
-
-    //     if (allProducts.data)
-    //         items = allProducts.data;
-    //     else
-    //         items = []
-
-    //     if (allProducts.paginationResult)
-    //         pagination = allProducts.paginationResult.numberOfPages;
-    //     else
-    //         pagination = []
-    // } catch (e) { }
-
-    
     return [items,pagination,onPress]
 
 }

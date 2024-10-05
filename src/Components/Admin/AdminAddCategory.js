@@ -6,6 +6,7 @@ import AddCategoryHooke from "../../hooks/category/admin-add-category-hook";
 const AdminAddCategory = () => {
  
     const [image,name,loading,isPressed,handleImage,handleName,handleSubmit] = AddCategoryHooke();
+
 //   const dispatch = useDispatch();
 //   const [image, setImage] = React.useState(avatar);
 //   const [name, setName] = React.useState("");
@@ -107,11 +108,13 @@ const AdminAddCategory = () => {
 
       {isPressed ? (
         loading ? (
+          <div className="text-center mt-3">
           <Spinner
             className="text-center"
             animation="border"
             variant="primary"
           />
+        </div>
         ) : null
       ) : null}
       <ToastContainer />

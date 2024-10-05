@@ -8,12 +8,17 @@ const CartItem = ({ item }) => {
   const [handelDeleteCart, show, handleClose, handleShow, handelDeleteItem, itemCount, onChangeCount, handeleUpdateCart] = DeleteCartHook(item)
 
 
-  const getImageUrl =(imageCover)=>{
-    if(imageCover.startsWith("http")){
+  const getImageUrl = (imageCover) => {
+    if (!imageCover || typeof imageCover !== 'string') {
+      return mobile;  // Fallback to a default image when imageCover is not valid
+    }
+    
+    if (imageCover.startsWith("http")) {
       return imageCover;
     }
+  
     return `${API_BASE_URL}/products/${imageCover}`;
-  }
+  };
 
 
   // const getImageUrl = (imageCover) => {
@@ -59,16 +64,16 @@ const CartItem = ({ item }) => {
         <Row className="justify-content-center mt-2">
           <Col sm="12" className=" d-flex flex-row justify-content-start">
             <div className="d-inline pt-2 cat-title">
-              {item.product.title || ""}
+              {item?.product?.title || ""}
 
             </div>
-            <div className="d-inline pt-2 cat-rate me-2">{item.product.ratingsAverage || 0}</div>
+            <div className="d-inline pt-2 cat-rate me-2">{item?.product?.ratingsAverage || 0}</div>
           </Col>
         </Row>
         <Row>
           <Col sm="12" className="mt-1">
             <div className="cat-text d-inline">الماركة :</div>
-            <div className="barnd-text d-inline mx-1">{item.product.brand.name || ""} </div>
+            <div className="barnd-text d-inline mx-1">{item?.product?.brand?.name || ""} </div>
           </Col>
         </Row>
         <Row>

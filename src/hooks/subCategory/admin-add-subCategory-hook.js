@@ -63,10 +63,10 @@ const AdminAddSubCategoryHook = () => {
       if (subCategory && subCategory.status === 201) {
         notify("تم اضافه التصنيف الفرعي بنجاح", "success");
         // console.log(subCategory);
-      } else if (subCategory && subCategory === "400 (Bad Request)") {
+      } else if (subCategory && subCategory === "400") {
         notify("التصنيف الفرعي موجود بالفعل", "error");
       } else {
-        notify("حدث خطأ ما", "error");
+        notify("التصنيف الفرعي موجود بالفعل", "error");
         // console.log(subCategory.status);
         dispatch(getAllCategory());
       }
